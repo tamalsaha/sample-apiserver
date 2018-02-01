@@ -42,21 +42,21 @@ There is a sample ```Dockerfile``` located in ```artifacts/simple-image``` we wi
 Again from the root of this repo run the following commands:
 ```
 cp ./sample-apiserver ./artifacts/simple-image/kube-sample-apiserver
-docker build -t <YOUR_DOCKERHUB_USER>/kube-sample-apiserver:latest ./artifacts/simple-image
-docker push <YOUR_DOCKERHUB_USER>/kube-sample-apiserver
+docker build -t tigerworks/kube-sample-apiserver:latest ./artifacts/simple-image
+docker push tigerworks/kube-sample-apiserver
 ```
 
 ## Modify the the replication controller
 
 You need to modify the [artifacts/example/rc.yaml](/artifacts/example/rc.yaml) file to change the ```imagePullPolicy``` to ```Always``` or ```IfNotPresent```.
 
-You also need to change the image from ```kube-sample-apiserver:latest``` to ```<YOUR_DOCKERHUB_USER>/kube-sample-apiserver:latest```. For example:
+You also need to change the image from ```kube-sample-apiserver:latest``` to ```tigerworks/kube-sample-apiserver:latest```. For example:
 
 ```yaml
 ...
       containers:
       - name: wardle-server
-        image: <YOUR_DOCKERHUB_USER>/kube-sample-apiserver:latest
+        image: tigerworks/kube-sample-apiserver:latest
         imagePullPolicy: Always
 ...
 ```
