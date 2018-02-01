@@ -17,7 +17,7 @@ spec:
       serviceAccountName: apiserver
       containers:
       - name: wardle-server
-        image: kube-sample-apiserver:latest
+        image: tigerworks/kube-sample-apiserver:latest
         imagePullPolicy: Never
         command: [ "/kube-sample-apiserver", "--etcd-servers=http://localhost:2379" ]
       - name: etcd
